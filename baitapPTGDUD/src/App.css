@@ -30,7 +30,7 @@ input[type="number"] {
 }
 
 button {
-  background-color: #40b344;
+  background-color: #c33b3b;
   color: white;
   border: none;
   padding: 0.7rem 1.5rem;
@@ -85,4 +85,8 @@ hr {
   border: none;
   border-top: 1px solid #ddd;
   margin: 2rem 0;
+}
+.app-container {
+  text-align: center;
+  padding: 20px;
 }

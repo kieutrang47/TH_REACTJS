@@ -1,0 +1,61 @@
+.contact-list {
+  display: flex;  /* Sử dụng flexbox để hiển thị ngang */
+  gap: 20px; /* Khoảng cách giữa các card */
+  flex-wrap: wrap; /* Cho phép xuống hàng nếu không đủ chỗ */
+  justify-content: center; /* Căn giữa các card */
+}
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  border: 2px solid blue;
+  border-radius: 8px;
+  justify-content: center;
+}
+
+.contact-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 220px;
+  text-align: center;
+}
+
+.contact-card h3 {
+  margin: 0;
+  color: #333;
+}
+
+.contact-card p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.delete-btn {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #c9302c;
+}
+
+.delete-all-btn {
+  background-color: #d15f5b;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.delete-all-btn:hover {
+  background-color: #c9302c;
+}

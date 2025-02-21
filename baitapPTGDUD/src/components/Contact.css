@@ -1,0 +1,10 @@
+.contact-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    width: 250px; /* Định kích thước card */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: left; /* Căn lề trái cho nội dung */
+  }
+  
