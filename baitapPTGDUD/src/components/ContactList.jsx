@@ -13,27 +13,27 @@
 
 // export default Contact;
 //bai2
-// import React from "react";
-// import Contact from "./Contact";
-// import "./ContactList.css"; // Import CSS cho danh sách
+import React from "react";
+import Contact from "./Contact";
+import "./ContactList.css"; // Import CSS cho danh sách
 
-// const ContactList = ({ contacts }) => {
-//   return (
-//     <div className="contact-list">
-//       {contacts.map((contact) => (
-//         <Contact 
-//           key={contact.id} 
-//           firstName={contact.firstName} 
-//           lastName={contact.lastName} 
-//           phone={contact.phone} 
-//           address={contact.address} 
-//         />
-//       ))}
-//     </div>
-//   );
-// };
+const ContactList = ({ contacts }) => {
+  return (
+    <div className="contact-list">
+      {contacts.map((contact) => (
+        <Contact 
+          key={contact.id} 
+          firstName={contact.firstName} 
+          lastName={contact.lastName} 
+          phone={contact.phone} 
+          address={contact.address} 
+        />
+      ))}
+    </div>
+  );
+};
 
-// export default ContactList;
+export default ContactList;
 
 //bai_3
 // import React, { useState } from "react";
@@ -102,55 +102,55 @@
 
 // export default ContactList;
 
-// test_bai_3
-import React, { useState } from "react";
-import { INITIAL_CONTACTS } from "./data";
+// // test_bai_3
+// import React, { useState } from "react";
+// import { INITIAL_CONTACTS } from "./data";
 
-const ContactList = () => {
-  const [contacts, setContacts] = useState(INITIAL_CONTACTS);
+// const ContactList = () => {
+//   const [contacts, setContacts] = useState(INITIAL_CONTACTS);
 
-  // Xóa 1 liên hệ
-  const deleteContact = (id) => {
-    setContacts(contacts.filter(contact => contact.id !== id));
-  };
+//   // Xóa 1 liên hệ
+//   const deleteContact = (id) => {
+//     setContacts(contacts.filter(contact => contact.id !== id));
+//   };
 
-  // Xóa tất cả liên hệ
-  const deleteAllContacts = () => {
-    setContacts([]);
-  };
+//   // Xóa tất cả liên hệ
+//   const deleteAllContacts = () => {
+//     setContacts([]);
+//   };
 
-  return (
-    <div>
-      <h2>Contact List</h2>
-      {contacts.length > 0 ? (
-        <table border="1" className="contact-table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {contacts.map((contact) => (
-              <tr key={contact.id}>
-                <td>{contact.name}</td>
-                <td>{contact.email}</td>
-                <td>{contact.phone}</td>
-                <td>
-                  <button className="delete-btn" onClick={() => deleteContact(contact.id)}>Delete</button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      ) : (
-        <p>No contacts available.</p>
-      )}
-      {contacts.length > 0 && <button className="delete-all-btn" onClick={deleteAllContacts}>Delete All</button>}
-    </div>
-  );
-};
+//   return (
+//     <div>
+//       <h2>Contact List</h2>
+//       {contacts.length > 0 ? (
+//         <table border="1" className="contact-table">
+//           <thead>
+//             <tr>
+//               <th>Name</th>
+//               <th>Email</th>
+//               <th>Phone</th>
+//               <th>Action</th>
+//             </tr>
+//           </thead>
+//           <tbody>
+//             {contacts.map((contact) => (
+//               <tr key={contact.id}>
+//                 <td>{contact.name}</td>
+//                 <td>{contact.email}</td>
+//                 <td>{contact.phone}</td>
+//                 <td>
+//                   <button className="delete-btn" onClick={() => deleteContact(contact.id)}>Delete</button>
+//                 </td>
+//               </tr>
+//             ))}
+//           </tbody>
+//         </table>
+//       ) : (
+//         <p>No contacts available.</p>
+//       )}
+//       {contacts.length > 0 && <button className="delete-all-btn" onClick={deleteAllContacts}>Delete All</button>}
+//     </div>
+//   );
+// };
 
-export default ContactList;
+// export default ContactList;
