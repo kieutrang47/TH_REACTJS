@@ -1,0 +1,73 @@
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.profile-info h2 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.profile-info p {
+  margin: 5px 0 0;
+  color: #666;
+}
+
+.profile-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.subscribers {
+  color: #e91e63;
+  font-weight: bold;
+}
+
+.share-btn {
+  background-color: #e91e63;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.tabs {
+  display: flex;
+  gap: 20px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.tabs button {
+  background: none;
+  border: none;
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #666;
+}
+
+.tabs .active {
+  color: #e91e63;
+  font-weight: bold;
+  border-bottom: 2px solid #e91e63;
+}
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
