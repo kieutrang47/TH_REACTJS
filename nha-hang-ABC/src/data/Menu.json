@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Pizza Margherita",
+    "price": 12.99,
+    "description": "Pizza cổ điển với sốt cà chua, mozzarella và húng quế tươi.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRObNksoK3Cl5hzm-eE4SR11qGVBNGQibUQYA&s",
+    "detailedDescription": "Pizza Margherita được làm từ bột mì tươi, sốt cà chua tự nhiên, phô mai mozzarella cao cấp và lá húng quế tươi, nướng trong lò củi truyền thống."
+  },
+  {
+    "id": 2,
+    "name": "Spaghetti Carbonara",
+    "price": 10.99,
+    "description": "Mì Ý sốt kem với thịt xông khói và phô mai Parmesan.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDW3DlLhD0dIyHXup4xVjQTKxnR6qt7XNUUQ&s",
+    "detailedDescription": "Spaghetti Carbonara với sốt kem béo ngậy, thịt xông khói giòn tan, rắc thêm phô mai Parmesan thơm lừng."
+  },
+  {
+    "id": 3,
+    "name": "Grilled Salmon",
+    "price": 18.99,
+    "description": "Cá hồi nướng với sốt chanh leo và rau củ tươi.",
+    "image": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?q=80&w=800&auto=format&fit=crop",
+    "detailedDescription": "Cá hồi tươi được nướng chín tới, ăn kèm sốt chanh leo thơm ngát và rau củ hấp dẫn."
+  },
+  {
+    "id": 4,
+    "name": "Pepperoni Pizza",
+    "price": 14.50,
+    "description": "Pizza với sốt cà chua, phô mai và xúc xích pepperoni cay.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkb8bnpzQOP0j7G7CFRtJgdI1K2cIVbV-aZQ&s",
+    "detailedDescription": "Pepperoni Pizza được làm từ bột mì tươi, sốt cà chua đậm đà, phủ phô mai mozzarella tan chảy và xúc xích pepperoni cay nồng."
+  },
+  {
+    "id": 5,
+    "name": "Lasagna",
+    "price": 13.75,
+    "description": "Mì Ý xếp lớp với thịt bò, sốt cà chua và phô mai bechamel.",
+    "image": "https://beptruong.edu.vn/wp-content/uploads/2017/12/lasagna-truyen-thong-600x400.jpg",
+    "detailedDescription": "Lasagna thơm ngon với lớp mì mềm, thịt bò xay nhuyễn, sốt cà chua đậm vị và phô mai bechamel béo ngậy, nướng vàng hấp dẫn."
+  },
+  {
+    "id": 6,
+    "name": "Beef Steak",
+    "price": 22.99,
+    "description": "Thịt bò nướng mềm với sốt tiêu đen và khoai tây nghiền.",
+    "image": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?q=80&w=800&auto=format&fit=crop",
+    "detailedDescription": "Beef Steak được nướng vừa chín tới, thấm đẫm sốt tiêu đen cay nhẹ, ăn kèm khoai tây nghiền mịn và rau củ tươi."
+  },
+  {
+    "id": 7,
+    "name": "Shrimp Alfredo",
+    "price": 16.50,
+    "description": "Mì Ý sốt Alfredo kem với tôm tươi và phô mai Parmesan.",
+    "image": "https://www.tasteofhome.com/wp-content/uploads/2018/01/Shrimp-Alfredo_EXPS_FT24_30092_JR_0208_1.jpg",
+    "detailedDescription": "Shrimp Alfredo với tôm tươi ngọt, sốt Alfredo béo ngậy từ kem và phô mai Parmesan, phủ thêm chút tiêu đen thơm."
+  },
+  {
+    "id": 8,
+    "name": "Chicken Caesar Salad",
+    "price": 9.99,
+    "description": "Salad gà với rau romaine, bánh mì nướng và sốt Caesar.",
+    "image": "https://images.unsplash.com/photo-1550304943-4f24f54ddde9?q=80&w=800&auto=format&fit=crop",
+    "detailedDescription": "Chicken Caesar Salad gồm gà nướng mềm, rau romaine giòn, bánh mì nướng vàng và sốt Caesar béo nhẹ, rắc phô mai Parmesan."
+  },
+  {
+    "id": 9,
+    "name": "Chocolate Lava Cake",
+    "price": 7.50,
+    "description": "Bánh sô-cô-la tan chảy với kem vani lạnh.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqaM0cCVxQQXHXT_QGA2befLdt35iuZGJUCA&s",
+    "detailedDescription": "Chocolate Lava Cake với lớp vỏ giòn bên ngoài, bên trong là sô-cô-la tan chảy ấm nóng, ăn kèm kem vani mát lạnh."
+  },
+  {
+    "id": 10,
+    "name": "Tiramisu",
+    "price": 6.99,
+    "description": "Bánh ngọt Ý với cà phê, mascarpone và cacao.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3EnCrVp0CvRGuhW4s4xUEY2etR-KFmRqaSw&s",
+    "detailedDescription": "Tiramisu mềm mịn với lớp bánh ladyfinger thấm cà phê, kem mascarpone béo ngậy và chút cacao đắng nhẹ rắc trên bề mặt."
+  }
+]
