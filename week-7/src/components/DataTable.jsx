@@ -11,6 +11,8 @@ const DataTable = () => {
   const [customers, setCustomers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const rowsPerPage = 6;
+  // thêm hooks để edit dữ liệu
+  const [editUser, setEditUser] = useState(null);
 
   useEffect(() => {
     fetch("http://localhost:3001/customers")
@@ -18,6 +20,27 @@ const DataTable = () => {
       .then((data) => setCustomers(data))
       .catch((err) => console.error("Failed to fetch customers:", err));
   }, []);
+
+  const handleSave = async () => {
+    try {
+      const response = await fetch(
+        `http://localhost:3001/customers/${editUser.id}`,
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(editUser),
+        }
+      );
+      if (response.ok) {
+        setCustomers((prev) =>
+          prev.map((cus) => (cus.id === editUser.id ? editUser : cus))
+        );
+        setEditUser(null);
+      }
+    } catch (error) {
+      console.error("Update failed", error);
+    }
+  };
 
   const totalPages = Math.ceil(customers.length / rowsPerPage);
   const currentData = customers.slice(
@@ -88,6 +111,7 @@ const DataTable = () => {
                   <Pencil
                     size={16}
                     className="text-gray-400 hover:text-gray-600 cursor-pointer"
+                    onClick={() => setEditUser(customer)}
                   />
                 </td>
               </tr>
@@ -130,6 +154,67 @@ const DataTable = () => {
           </button>
         </div>
       </div>
+
+      {/* Modal */}
+      {editUser && (
+        <div className="fixed inset-0 bg-black/30 flex justify-center items-center z-50">
+          <div className="bg-white p-6 rounded-xl w-[400px] space-y-4 shadow-lg">
+            <h3 className="text-lg font-semibold">Edit Customer</h3>
+            <div className="space-y-2">
+              <input
+                className="w-full border p-2 rounded"
+                value={editUser.name}
+                onChange={(e) =>
+                  setEditUser({ ...editUser, name: e.target.value })
+                }
+              />
+              <input
+                className="w-full border p-2 rounded"
+                value={editUser.company}
+                onChange={(e) =>
+                  setEditUser({ ...editUser, company: e.target.value })
+                }
+              />
+              <input
+                type="number"
+                className="w-full border p-2 rounded"
+                value={editUser.orderValue}
+                onChange={(e) =>
+                  setEditUser({
+                    ...editUser,
+                    orderValue: Number(e.target.value),
+                  })
+                }
+              />
+              <select
+                className="w-full border p-2 rounded"
+                value={editUser.status}
+                onChange={(e) =>
+                  setEditUser({ ...editUser, status: e.target.value })
+                }
+              >
+                <option>New</option>
+                <option>In-progress</option>
+                <option>Completed</option>
+              </select>
+            </div>
+            <div className="flex justify-end gap-2 pt-2">
+              <button
+                className="px-4 py-1 border rounded text-gray-600"
+                onClick={() => setEditUser(null)}
+              >
+                Cancel
+              </button>
+              <button
+                className="px-4 py-1 bg-pink-500 text-white rounded"
+                onClick={handleSave}
+              >
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
