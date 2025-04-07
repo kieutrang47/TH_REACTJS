@@ -1,4 +1,4 @@
-//updtae cau 5
+//updtae cau 5 + 6
 import { NavLink } from "react-router-dom";
 import image1858 from "../assets/Lab_05/Image 1858.png";
 import sqare from "../assets/Lab_05/Squares four 1.png";
