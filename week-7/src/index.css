@@ -1,0 +1,54 @@
+
+@import "tailwindcss";
+.container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "menu content"
+    "footer footer";
+  grid-template-columns: 1fr minmax(200px, 3fr);  /* Cột menu nhỏ hơn khi không gian hạn chế */
+  gap: 10px;  /* Điều chỉnh gap giữa các phần tử */
+  padding: 20px;  /* Padding tổng thể */
+}
+
+
+.container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 15px;
+  transition: all 0.3s ease;  /* Tạo hiệu ứng chuyển động mượt mà */
+}
+.container > div.header {
+  grid-area: header;
+  text-align: center;
+}
+.container > div.menu {
+  grid-area: menu;
+}
+.container > div.content {
+  grid-area: content;
+}
+.container > div.footer {
+  grid-area: footer;
+
+}
+
+/* Đối với màn hình nhỏ hơn 1024px (kích thước màn hình tablet, laptop nhỏ) */
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr;  /* Chuyển sang một cột */
+  }
+  .container > div {
+    padding: 15px;  /* Giảm padding để phù hợp với không gian nhỏ */
+  }
+}
+
+/* Đối với màn hình rất nhỏ (như điện thoại) */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;  /* Cũng chuyển sang một cột */
+    padding: 10px;
+  }
+  .container > div {
+    padding: 8px;  /* Giảm thêm padding */
+  }
+}
