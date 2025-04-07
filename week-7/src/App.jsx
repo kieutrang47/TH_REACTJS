@@ -16,6 +16,7 @@ export default function App() {
 
         {/* Nội dung chính => pages */}
         <main className="flex-1 overflow-y-auto bg-gray-50 p-6">
+          {/* hiện nội dung trang con */}
           <Outlet />
         </main>
       </div>
