@@ -16,3 +16,5 @@ npx json-server --watch db.json --port 3001
 
 tích hợp lệnh trên trong file package.json rồi 
 =>> chỉ cần chạy npm run dev là có thể chạy cả file dữ liệu 
+
+npm install react-router-dom

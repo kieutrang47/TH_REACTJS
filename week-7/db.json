@@ -17,57 +17,570 @@
   "customers": [
     {
       "id": 1,
-      "name": "Elizabeth Lee",
-      "company": "AvatarSystems",
-      "orderValue": 359,
-      "orderDate": "2023-07-10",
-      "status": "New",
-      "avatar": "/img/Avatar (1).png"
-    },
-    {
-      "id": 2,
-      "name": "Carlos Garcia",
-      "company": "SmoozeShift",
-      "orderValue": 747,
-      "orderDate": "2023-07-24",
-      "status": "New",
+      "name": "William Johnson",
+      "company": "FlowRush",
+      "orderValue": 573,
+      "orderDate": "2023-04-11",
+      "status": "Completed",
       "avatar": "/img/Avatar (2).png"
     },
     {
-      "id": 3,
-      "name": "Elizabeth Bailey",
-      "company": "Prime Time Telecom",
-      "orderValue": 564,
-      "orderDate": "2023-08-08",
+      "id": 2,
+      "name": "Mason Smith",
+      "company": "AvatarSystems",
+      "orderValue": 938,
+      "orderDate": "2023-08-20",
       "status": "In-progress",
-      "avatar": "/img/Avatar (3).png"
+      "avatar": "/img/Avatar (6).png"
+    },
+    {
+      "id": 3,
+      "name": "Evelyn Brown",
+      "company": "Prime Time Telecom",
+      "orderValue": 797,
+      "orderDate": "2023-01-13",
+      "status": "In-progress",
+      "avatar": "/img/Avatar (5).png"
     },
     {
       "id": 4,
-      "name": "Ryan Brown",
-      "company": "OmniTech Corporation",
-      "orderValue": 541,
-      "orderDate": "2023-08-31",
+      "name": "Jacob Garcia",
+      "company": "DataStream Inc.",
+      "orderValue": 698,
+      "orderDate": "2023-07-26",
       "status": "In-progress",
-      "avatar": "/img/Avatar (4).png"
+      "avatar": "/img/Avatar (2).png"
     },
     {
       "id": 5,
-      "name": "Ryan Young",
+      "name": "Mason Davis",
       "company": "DataStream Inc.",
-      "orderValue": 769,
-      "orderDate": "2023-05-01",
+      "orderValue": 316,
+      "orderDate": "2023-07-02",
+      "status": "Completed",
+      "avatar": "/img/Avatar (6).png"
+    },
+    {
+      "id": 6,
+      "name": "Amelia Smith",
+      "company": "DataStream Inc.",
+      "orderValue": 408,
+      "orderDate": "2023-10-02",
+      "status": "In-progress",
+      "avatar": "/img/Avatar (9).png"
+    },
+    {
+      "id": 7,
+      "name": "Elijah Davis",
+      "company": "AvatarSystems",
+      "orderValue": 938,
+      "orderDate": "2023-09-20",
+      "status": "Completed",
+      "avatar": "/img/Avatar (7).png"
+    },
+    {
+      "id": 8,
+      "name": "Benjamin Brown",
+      "company": "FlowRush",
+      "orderValue": 583,
+      "orderDate": "2023-07-31",
+      "status": "New",
+      "avatar": "/img/Avatar (7).png"
+    },
+    {
+      "id": 9,
+      "name": "Logan Davis",
+      "company": "OmniTech Corporation",
+      "orderValue": 974,
+      "orderDate": "2023-07-25",
+      "status": "Completed",
+      "avatar": "/img/Avatar (2).png"
+    },
+    {
+      "id": 10,
+      "name": "Harper Smith",
+      "company": "SmoozeShift",
+      "orderValue": 176,
+      "orderDate": "2023-01-11",
       "status": "Completed",
       "avatar": "/img/Avatar (5).png"
     },
     {
-      "id": 6,
-      "name": "Hailey Adams",
-      "company": "FlowRush",
-      "orderValue": 922,
-      "orderDate": "2023-06-10",
+      "id": 11,
+      "name": "Harper Martinez",
+      "company": "OmniTech Corporation",
+      "orderValue": 528,
+      "orderDate": "2023-03-06",
       "status": "Completed",
-      "avatar": "/img/Avatar 313.png"
+      "avatar": "/img/Avatar (3).png"
+    },
+    {
+      "id": 12,
+      "name": "Harper Johnson",
+      "company": "DataStream Inc.",
+      "orderValue": 587,
+      "orderDate": "2023-02-20",
+      "status": "In-progress",
+      "avatar": "/img/Avatar (6).png"
+    },
+    {
+      "id": 13,
+      "name": "Elijah Garcia",
+      "company": "SmoozeShift",
+      "orderValue": 644,
+      "orderDate": "2023-07-13",
+      "status": "New",
+      "avatar": "/img/Avatar (5).png"
+    },
+    {
+      "id": 14,
+      "name": "Oliver Brown",
+      "company": "SmoozeShift",
+      "orderValue": 713,
+      "orderDate": "2023-10-24",
+      "status": "In-progress",
+      "avatar": "/img/Avatar (9).png"
+    },
+    {
+      "id": 15,
+      "name": "Mason Jones",
+      "company": "AvatarSystems",
+      "orderValue": 140,
+      "orderDate": "2023-09-24",
+      "status": "New",
+      "avatar": "/img/Avatar (7).png"
+    },
+    {
+      "id": 16,
+      "name": "Abigail Martinez",
+      "company": "Prime Time Telecom",
+      "orderValue": 923,
+      "orderDate": "2023-04-29",
+      "status": "New",
+      "avatar": "/img/Avatar (2).png"
+    },
+    {
+      "id": 17,
+      "name": "Isabella Williams",
+      "company": "OmniTech Corporation",
+      "orderValue": 679,
+      "orderDate": "2023-09-22",
+      "status": "New",
+      "avatar": "/img/Avatar (3).png"
+    },
+    {
+      "id": 18,
+      "name": "Liam Jones",
+      "company": "FlowRush",
+      "orderValue": 890,
+      "orderDate": "2023-05-03",
+      "status": "In-progress",
+      "avatar": "/img/Avatar (1).png"
+    },
+    {
+      "id": 19,
+      "name": "Evelyn Williams",
+      "company": "AvatarSystems",
+      "orderValue": 524,
+      "orderDate": "2023-06-20",
+      "status": "In-progress",
+      "avatar": "/img/Avatar (6).png"
+    },
+    {
+      "id": 20,
+      "name": "Sophia Smith",
+      "company": "Prime Time Telecom",
+      "orderValue": 724,
+      "orderDate": "2023-04-11",
+      "status": "New",
+      "avatar": "/img/Avatar (7).png"
+    },
+    {
+      "id": 21,
+      "name": "Mia Hernandez",
+      "company": "Prime Time Telecom",
+      "orderValue": 730,
+      "orderDate": "2023-01-07",
+      "status": "New",
+      "avatar": "/img/Avatar (9).png"
+    },
+    {
+      "id": 22,
+      "name": "Mason Davis",
+      "company": "FlowRush",
+      "orderValue": 491,
+      "orderDate": "2023-07-31",
+      "status": "New",
+      "avatar": "/img/Avatar (10).png"
+    },
+    {
+      "id": 23,
+      "name": "Benjamin Smith",
+      "company": "Prime Time Telecom",
+      "orderValue": 171,
+      "orderDate": "2023-06-23",
+      "status": "In-progress",
+      "avatar": "/img/Avatar (1).png"
+    },
+    {
+      "id": 24,
+      "name": "Emma Johnson",
+      "company": "DataStream Inc.",
+      "orderValue": 202,
+      "orderDate": "2023-05-31",
+      "status": "Completed",
+      "avatar": "/img/Avatar (2).png"
+    },
+    {
+      "id": 25,
+      "name": "Amelia Smith",
+      "company": "OmniTech Corporation",
+      "orderValue": 561,
+      "orderDate": "2023-04-28",
+      "status": "In-progress",
+      "avatar": "/img/Avatar (9).png"
+    },
+    {
+      "id": 26,
+      "name": "Isabella Davis",
+      "company": "OmniTech Corporation",
+      "orderValue": 553,
+      "orderDate": "2023-04-22",
+      "status": "Completed",
+      "avatar": "/img/Avatar (10).png"
+    },
+    {
+      "id": 27,
+      "name": "William Hernandez",
+      "company": "Prime Time Telecom",
+      "orderValue": 451,
+      "orderDate": "2023-09-11",
+      "status": "In-progress",
+      "avatar": "/img/Avatar (6).png"
+    },
+    {
+      "id": 28,
+      "name": "Abigail Davis",
+      "company": "OmniTech Corporation",
+      "orderValue": 728,
+      "orderDate": "2023-07-03",
+      "status": "In-progress",
+      "avatar": "/img/Avatar (3).png"
+    },
+    {
+      "id": 29,
+      "name": "Emma Davis",
+      "company": "FlowRush",
+      "orderValue": 928,
+      "orderDate": "2023-10-27",
+      "status": "New",
+      "avatar": "/img/Avatar (7).png"
+    },
+    {
+      "id": 30,
+      "name": "Benjamin Davis",
+      "company": "SmoozeShift",
+      "orderValue": 820,
+      "orderDate": "2023-07-29",
+      "status": "New",
+      "avatar": "/img/Avatar (9).png"
+    },
+    {
+      "id": 31,
+      "name": "William Williams",
+      "company": "SmoozeShift",
+      "orderValue": 870,
+      "orderDate": "2023-05-04",
+      "status": "In-progress",
+      "avatar": "/img/Avatar (9).png"
+    },
+    {
+      "id": 32,
+      "name": "Harper Brown",
+      "company": "AvatarSystems",
+      "orderValue": 326,
+      "orderDate": "2023-02-16",
+      "status": "Completed",
+      "avatar": "/img/Avatar (2).png"
+    },
+    {
+      "id": 33,
+      "name": "Benjamin Brown",
+      "company": "Prime Time Telecom",
+      "orderValue": 449,
+      "orderDate": "2023-01-05",
+      "status": "Completed",
+      "avatar": "/img/Avatar (8).png"
+    },
+    {
+      "id": 34,
+      "name": "William Miller",
+      "company": "FlowRush",
+      "orderValue": 176,
+      "orderDate": "2023-01-26",
+      "status": "In-progress",
+      "avatar": "/img/Avatar (5).png"
+    },
+    {
+      "id": 35,
+      "name": "Evelyn Garcia",
+      "company": "FlowRush",
+      "orderValue": 330,
+      "orderDate": "2023-01-23",
+      "status": "New",
+      "avatar": "/img/Avatar (2).png"
+    },
+    {
+      "id": 36,
+      "name": "Abigail Brown",
+      "company": "Prime Time Telecom",
+      "orderValue": 427,
+      "orderDate": "2023-05-05",
+      "status": "In-progress",
+      "avatar": "/img/Avatar (4).png"
+    },
+    {
+      "id": 37,
+      "name": "Logan Miller",
+      "company": "OmniTech Corporation",
+      "orderValue": 765,
+      "orderDate": "2023-03-10",
+      "status": "Completed",
+      "avatar": "/img/Avatar (4).png"
+    },
+    {
+      "id": 38,
+      "name": "Liam Hernandez",
+      "company": "SmoozeShift",
+      "orderValue": 282,
+      "orderDate": "2023-10-22",
+      "status": "In-progress",
+      "avatar": "/img/Avatar (3).png"
+    },
+    {
+      "id": 39,
+      "name": "Evelyn Martinez",
+      "company": "AvatarSystems",
+      "orderValue": 451,
+      "orderDate": "2023-08-11",
+      "status": "New",
+      "avatar": "/img/Avatar (2).png"
+    },
+    {
+      "id": 40,
+      "name": "Ava Garcia",
+      "company": "Prime Time Telecom",
+      "orderValue": 485,
+      "orderDate": "2023-11-17",
+      "status": "In-progress",
+      "avatar": "/img/Avatar (6).png"
+    },
+    {
+      "id": 41,
+      "name": "Olivia Brown",
+      "company": "SmoozeShift",
+      "orderValue": 649,
+      "orderDate": "2023-10-04",
+      "status": "New",
+      "avatar": "/img/Avatar (3).png"
+    },
+    {
+      "id": 42,
+      "name": "Ava Miller",
+      "company": "SmoozeShift",
+      "orderValue": 343,
+      "orderDate": "2023-06-18",
+      "status": "In-progress",
+      "avatar": "/img/Avatar (10).png"
+    },
+    {
+      "id": 43,
+      "name": "Amelia Smith",
+      "company": "AvatarSystems",
+      "orderValue": 859,
+      "orderDate": "2023-03-13",
+      "status": "Completed",
+      "avatar": "/img/Avatar (8).png"
+    },
+    {
+      "id": 44,
+      "name": "Logan Miller",
+      "company": "OmniTech Corporation",
+      "orderValue": 402,
+      "orderDate": "2023-03-16",
+      "status": "Completed",
+      "avatar": "/img/Avatar (2).png"
+    },
+    {
+      "id": 45,
+      "name": "Logan Johnson",
+      "company": "OmniTech Corporation",
+      "orderValue": 249,
+      "orderDate": "2023-02-02",
+      "status": "New",
+      "avatar": "/img/Avatar (4).png"
+    },
+    {
+      "id": 46,
+      "name": "Ava Brown",
+      "company": "AvatarSystems",
+      "orderValue": 628,
+      "orderDate": "2023-07-05",
+      "status": "In-progress",
+      "avatar": "/img/Avatar (9).png"
+    },
+    {
+      "id": 47,
+      "name": "Elijah Johnson",
+      "company": "FlowRush",
+      "orderValue": 301,
+      "orderDate": "2023-01-10",
+      "status": "Completed",
+      "avatar": "/img/Avatar (7).png"
+    },
+    {
+      "id": 48,
+      "name": "Jacob Garcia",
+      "company": "Prime Time Telecom",
+      "orderValue": 422,
+      "orderDate": "2023-08-12",
+      "status": "New",
+      "avatar": "/img/Avatar (5).png"
+    },
+    {
+      "id": 49,
+      "name": "Evelyn Garcia",
+      "company": "OmniTech Corporation",
+      "orderValue": 318,
+      "orderDate": "2023-10-01",
+      "status": "Completed",
+      "avatar": "/img/Avatar (2).png"
+    },
+    {
+      "id": 50,
+      "name": "Oliver Davis",
+      "company": "OmniTech Corporation",
+      "orderValue": 953,
+      "orderDate": "2023-01-04",
+      "status": "New",
+      "avatar": "/img/Avatar (5).png"
+    },
+    {
+      "id": 51,
+      "name": "James Martinez",
+      "company": "OmniTech Corporation",
+      "orderValue": 515,
+      "orderDate": "2023-12-07",
+      "status": "Completed",
+      "avatar": "/img/Avatar (7).png"
+    },
+    {
+      "id": 52,
+      "name": "Oliver Jones",
+      "company": "DataStream Inc.",
+      "orderValue": 362,
+      "orderDate": "2023-02-17",
+      "status": "Completed",
+      "avatar": "/img/Avatar (6).png"
+    },
+    {
+      "id": 53,
+      "name": "Liam Garcia",
+      "company": "FlowRush",
+      "orderValue": 811,
+      "orderDate": "2023-11-16",
+      "status": "Completed",
+      "avatar": "/img/Avatar (3).png"
+    },
+    {
+      "id": 54,
+      "name": "Olivia Johnson",
+      "company": "SmoozeShift",
+      "orderValue": 707,
+      "orderDate": "2023-03-14",
+      "status": "Completed",
+      "avatar": "/img/Avatar (10).png"
+    },
+    {
+      "id": 55,
+      "name": "Abigail Williams",
+      "company": "FlowRush",
+      "orderValue": 916,
+      "orderDate": "2023-03-16",
+      "status": "New",
+      "avatar": "/img/Avatar (5).png"
+    },
+    {
+      "id": 56,
+      "name": "Liam Brown",
+      "company": "DataStream Inc.",
+      "orderValue": 744,
+      "orderDate": "2023-05-13",
+      "status": "In-progress",
+      "avatar": "/img/Avatar (4).png"
+    },
+    {
+      "id": 57,
+      "name": "Abigail Garcia",
+      "company": "Prime Time Telecom",
+      "orderValue": 322,
+      "orderDate": "2023-06-11",
+      "status": "New",
+      "avatar": "/img/Avatar (10).png"
+    },
+    {
+      "id": 58,
+      "name": "Mason Hernandez",
+      "company": "OmniTech Corporation",
+      "orderValue": 930,
+      "orderDate": "2023-02-27",
+      "status": "Completed",
+      "avatar": "/img/Avatar (8).png"
+    },
+    {
+      "id": 59,
+      "name": "James Martinez",
+      "company": "DataStream Inc.",
+      "orderValue": 896,
+      "orderDate": "2023-04-02",
+      "status": "New",
+      "avatar": "/img/Avatar (7).png"
+    },
+    {
+      "id": 60,
+      "name": "Elijah Smith",
+      "company": "FlowRush",
+      "orderValue": 351,
+      "orderDate": "2023-09-28",
+      "status": "New",
+      "avatar": "/img/Avatar (10).png"
+    },
+    {
+      "id": 61,
+      "name": "William Miller",
+      "company": "FlowRush",
+      "orderValue": 533,
+      "orderDate": "2023-10-09",
+      "status": "In-progress",
+      "avatar": "/img/Avatar (7).png"
+    },
+    {
+      "id": 62,
+      "name": "Logan Garcia",
+      "company": "OmniTech Corporation",
+      "orderValue": 892,
+      "orderDate": "2023-05-07",
+      "status": "In-progress",
+      "avatar": "/img/Avatar (5).png"
+    },
+    {
+      "id": 63,
+      "name": "Ava Martinez",
+      "company": "DataStream Inc.",
+      "orderValue": 359,
+      "orderDate": "2023-09-28",
+      "status": "Completed",
+      "avatar": "/img/Avatar (10).png"
     }
   ]
 }

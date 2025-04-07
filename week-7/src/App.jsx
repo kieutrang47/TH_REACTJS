@@ -1,24 +1,50 @@
+//cau 5
+import { Outlet } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
-import Header from "./components/Header";
-import OverviewCards from "./components/OverviewCards";
-import DataTable from "./components/DataTable";
-import Pagination from "./components/Pagination";
+import Header from "./components/Header"; // nếu có Header
 
-function App() {
+export default function App() {
   return (
-    <div className="flex min-h-screen">
+    <div className="flex h-screen overflow-hidden">
+      {/* Sidebar cố định */}
       <Sidebar />
-      <div className="flex flex-col flex-1 bg-white px-6 py-4">
+
+      {/* Main content scrollable */}
+      <div className="flex-1 flex flex-col overflow-hidden">
+        {/* Nếu có Header */}
         <Header />
-        <OverviewCards />
-        <DataTable />
-        {/* <Pagination /> */}
+
+        {/* Nội dung chính => pages */}
+        <main className="flex-1 overflow-y-auto bg-gray-50 p-6">
+          <Outlet />
+        </main>
       </div>
     </div>
   );
 }
 
-export default App;
+//cau 2 3 4
+// import Sidebar from "./components/Sidebar";
+// import Header from "./components/Header";
+// import OverviewCards from "./components/OverviewCards";
+// import DataTable from "./components/DataTable";
+// import Pagination from "./components/Pagination";
+
+// function App() {
+//   return (
+//     <div className="flex min-h-screen">
+//       <Sidebar />
+//       <div className="flex flex-col flex-1 bg-white px-6 py-4">
+//         <Header />
+//         <OverviewCards />
+//         <DataTable />
+//         {/* <Pagination /> */}
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default App;
 
 //step1_cau1
 // import { useState } from "react";
