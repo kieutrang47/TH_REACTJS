@@ -1,128 +1,94 @@
 import { Pencil } from "lucide-react";
-import StatusBadge from "./StatusBadge";
+import { useEffect, useState } from "react";
 
-const mockData = [
-  {
-    id: 1,
-    customerName: "Elizabeth Lee",
-    company: "AvatarSystems",
-    avatar:
-      "https://res.cloudinary.com/dxfbutjyu/image/upload/v1743782850/Avatar_4_sqnlgt.png",
-    orderValue: 359,
-    orderDate: "10/07/2023",
-    status: "New",
-  },
-  {
-    id: 2,
-    customerName: "Carlos Garcia",
-    company: "SmoozeShift",
-    avatar:
-      "https://res.cloudinary.com/dxfbutjyu/image/upload/v1743782850/Avatar_4_sqnlgt.png",
-    orderValue: 747,
-    orderDate: "24/07/2023",
-    status: "New",
-  },
-  {
-    id: 3,
-    customerName: "Elizabeth Bailey",
-    company: "Prime Time Telecom",
-    avatar:
-      "https://res.cloudinary.com/dxfbutjyu/image/upload/v1743782849/Avatar_5_zifhoi.png",
-    orderValue: 564,
-    orderDate: "08/08/2023",
-    status: "In-progress",
-  },
-  {
-    id: 4,
-    customerName: "Ryan Brown",
-    company: "OmniTech Corporation",
-    avatar:
-      "https://res.cloudinary.com/dxfbutjyu/image/upload/v1743782849/Avatar_1_qos7ap.png",
-    orderValue: 541,
-    orderDate: "31/08/2023",
-    status: "In-progress",
-  },
-  {
-    id: 5,
-    customerName: "Ryan Young",
-    company: "DataStream Inc.",
-    avatar:
-      "https://res.cloudinary.com/dxfbutjyu/image/upload/v1743782849/Avatar_3_cdly7h.png",
-    orderValue: 769,
-    orderDate: "01/05/2023",
-    status: "Completed",
-  },
-  {
-    id: 6,
-    customerName: "Hailey Adams",
-    company: "FlowRush",
-    avatar:
-      "https://res.cloudinary.com/dxfbutjyu/image/upload/v1743782849/Avatar_2_qlwgra.png",
-    orderValue: 922,
-    orderDate: "10/06/2023",
-    status: "Completed",
-  },
-];
+const statusStyles = {
+  New: "bg-blue-100 text-blue-500",
+  "In-progress": "bg-yellow-100 text-yellow-600",
+  Completed: "bg-green-100 text-green-500",
+};
 
-export default function DataTable() {
+const DataTable = () => {
+  const [customers, setCustomers] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const rowsPerPage = 6;
+
+  useEffect(() => {
+    fetch("http://localhost:3001/customers")
+      .then((res) => res.json())
+      .then((data) => setCustomers(data))
+      .catch((err) => console.error("Failed to fetch customers:", err));
+  }, []);
+
+  const totalPages = Math.ceil(customers.length / rowsPerPage);
+  const currentData = customers.slice(
+    (currentPage - 1) * rowsPerPage,
+    currentPage * rowsPerPage
+  );
+
   return (
-    <div className="bg-white p-6 rounded-lg shadow mt-8">
+    <div className="bg-white rounded-xl p-4 mt-6 shadow-sm">
       <div className="flex justify-between items-center mb-4">
-        <h2 className="font-bold text-xl flex items-center gap-2">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/3176/3176360.png"
-            className="w-5 h-5"
-            alt="report"
-          />
-          Detailed report
+        <h2 className="text-lg font-semibold flex items-center gap-2">
+          📊 Detailed report
         </h2>
         <div className="flex gap-2">
-          <button className="border border-pink-500 text-pink-500 px-3 py-1 rounded-full text-sm hover:bg-pink-100">
-            <span>📥</span> Import
+          <button className="border border-pink-500 text-pink-500 px-3 py-1 rounded-lg text-sm hover:bg-pink-50">
+            📥 Import
           </button>
-          <button className="border border-pink-500 text-pink-500 px-3 py-1 rounded-full text-sm hover:bg-pink-100">
-            <span>📤</span> Export
+          <button className="border border-pink-500 text-pink-500 px-3 py-1 rounded-lg text-sm hover:bg-pink-50">
+            📤 Export
           </button>
         </div>
       </div>
 
-      <div className="overflow-x-auto rounded-lg border">
-        <table className="min-w-full text-sm text-left">
-          <thead className="bg-gray-50">
+      <div className="overflow-x-auto rounded-xl border">
+        <table className="min-w-full text-sm">
+          <thead className="bg-gray-50 text-gray-600 uppercase text-xs">
             <tr>
-              <th className="px-4 py-3">
+              <th className="p-3 text-left">
                 <input type="checkbox" />
               </th>
-              <th className="px-4 py-3">Customer Name</th>
-              <th className="px-4 py-3">Company</th>
-              <th className="px-4 py-3">Order Value</th>
-              <th className="px-4 py-3">Order Date</th>
-              <th className="px-4 py-3">Status</th>
-              <th className="px-4 py-3"></th>
+              <th className="p-3 text-left">Customer Name</th>
+              <th className="p-3 text-left">Company</th>
+              <th className="p-3 text-left">Order Value</th>
+              <th className="p-3 text-left">Order Date</th>
+              <th className="p-3 text-left">Status</th>
+              <th className="p-3 text-left"></th>
             </tr>
           </thead>
           <tbody>
-            {mockData.map((item) => (
-              <tr key={item.id} className="border-t hover:bg-gray-50">
-                <td className="px-4 py-3">
+            {currentData.map((customer) => (
+              <tr key={customer.id} className="border-t hover:bg-gray-50">
+                <td className="p-3">
                   <input type="checkbox" />
                 </td>
-                <td className="px-4 py-3 flex items-center gap-2 font-semibold">
+                <td className="p-3 flex items-center gap-2 font-medium text-gray-800">
                   <img
-                    src={item.avatar}
-                    className="w-8 h-8 rounded-full"
-                    alt=""
+                    src={customer.avatar}
+                    alt={customer.name}
+                    className="w-8 h-8 rounded-full object-cover"
                   />
-                  {item.customerName}
+                  {customer.name}
                 </td>
-                <td className="px-4 py-3">{item.company}</td>
-                <td className="px-4 py-3">${item.orderValue}</td>
-                <td className="px-4 py-3">{item.orderDate}</td>
-                <td className="px-4 py-3">
-                  <StatusBadge status={item.status} />
+                <td className="p-3">{customer.company}</td>
+                <td className="p-3">${customer.orderValue}</td>
+                <td className="p-3">
+                  {new Date(customer.orderDate).toLocaleDateString("en-GB")}
                 </td>
-                <td className="px-4 py-3">
-                  <Pencil className="w-4 h-4 text-gray-500 hover:text-black cursor-pointer" />
+                <td className="p-3">
+                  <span
+                    className={`px-2 py-1 rounded-full text-xs font-medium ${
+                      statusStyles[customer.status]
+                    }`}
+                  >
+                    {customer.status}
+                  </span>
+                </td>
+                <td className="p-3">
+                  <Pencil
+                    size={16}
+                    className="text-gray-400 hover:text-gray-600 cursor-pointer"
+                  />
                 </td>
               </tr>
             ))}
@@ -130,26 +96,45 @@ export default function DataTable() {
         </table>
       </div>
 
-      <div className="flex justify-between items-center text-sm text-gray-500 mt-4 px-1">
-        <p>63 results</p>
-        <div className="flex items-center gap-1">
-          <button className="px-2 py-1 rounded hover:bg-gray-100">&lt;</button>
-          {[1, 2, 3, 4, "...", 10, 11].map((n, i) => (
+      <div className="flex justify-between items-center mt-4 text-sm text-gray-600">
+        <span>{customers.length} results</span>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+            className="px-2"
+            disabled={currentPage === 1}
+          >
+            &lt;
+          </button>
+          {[...Array(totalPages)].map((_, i) => (
             <button
               key={i}
+              onClick={() => setCurrentPage(i + 1)}
               className={`px-2 py-1 rounded-full ${
-                n === 1 ? "bg-pink-500 text-white" : "hover:bg-gray-100"
+                currentPage === i + 1
+                  ? "bg-pink-500 text-white"
+                  : "text-gray-600"
               }`}
             >
-              {n}
+              {i + 1}
             </button>
           ))}
-          <button className="px-2 py-1 rounded hover:bg-gray-100">&gt;</button>
+          <button
+            onClick={() =>
+              setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+            }
+            className="px-2"
+            disabled={currentPage === totalPages}
+          >
+            &gt;
+          </button>
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default DataTable;
 
 // import down from "../assets/Lab_05/Download.png";
 // import move from "../assets/Lab_05/Move up.png";

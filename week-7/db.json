@@ -1,18 +1,73 @@
 {
-    "turnover": {
-      "value": "$92,405",
-      "percent": "5.39%",
-      "img": "https://res.cloudinary.com/dxfbutjyu/image/upload/v1743782898/Button_1509_rd6s53.png"
+  "turnover": {
+    "value": "$92,405",
+    "percent": "5.39%",
+    "img": "https://res.cloudinary.com/dxfbutjyu/image/upload/v1743782898/Button_1509_rd6s53.png"
+  },
+  "profit": {
+    "value": "$32,218",
+    "percent": "5.39%",
+    "img": "https://res.cloudinary.com/dxfbutjyu/image/upload/v1743782898/Button_1529_yzfcu9.png"
+  },
+  "new-customer": {
+    "value": "298",
+    "percent": "6.84%",
+    "img": "https://res.cloudinary.com/dxfbutjyu/image/upload/v1743782899/Button_1530_zmyqqm.png"
+  },
+  "customers": [
+    {
+      "id": 1,
+      "name": "Elizabeth Lee",
+      "company": "AvatarSystems",
+      "orderValue": 359,
+      "orderDate": "2023-07-10",
+      "status": "New",
+      "avatar": "/img/Avatar (1).png"
     },
-    "profit": {
-      "value": "$32,218",
-      "percent": "5.39%",
-      "img": "https://res.cloudinary.com/dxfbutjyu/image/upload/v1743782898/Button_1529_yzfcu9.png"
+    {
+      "id": 2,
+      "name": "Carlos Garcia",
+      "company": "SmoozeShift",
+      "orderValue": 747,
+      "orderDate": "2023-07-24",
+      "status": "New",
+      "avatar": "/img/Avatar (2).png"
     },
-    "new-customer": {
-      "value": "298",
-      "percent": "6.84%",
-      "img": "https://res.cloudinary.com/dxfbutjyu/image/upload/v1743782899/Button_1530_zmyqqm.png"
+    {
+      "id": 3,
+      "name": "Elizabeth Bailey",
+      "company": "Prime Time Telecom",
+      "orderValue": 564,
+      "orderDate": "2023-08-08",
+      "status": "In-progress",
+      "avatar": "/img/Avatar (3).png"
+    },
+    {
+      "id": 4,
+      "name": "Ryan Brown",
+      "company": "OmniTech Corporation",
+      "orderValue": 541,
+      "orderDate": "2023-08-31",
+      "status": "In-progress",
+      "avatar": "/img/Avatar (4).png"
+    },
+    {
+      "id": 5,
+      "name": "Ryan Young",
+      "company": "DataStream Inc.",
+      "orderValue": 769,
+      "orderDate": "2023-05-01",
+      "status": "Completed",
+      "avatar": "/img/Avatar (5).png"
+    },
+    {
+      "id": 6,
+      "name": "Hailey Adams",
+      "company": "FlowRush",
+      "orderValue": 922,
+      "orderDate": "2023-06-10",
+      "status": "Completed",
+      "avatar": "/img/Avatar 313.png"
     }
-  }
-  
+  ]
+}
