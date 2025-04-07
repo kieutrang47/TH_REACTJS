@@ -13,3 +13,6 @@ If you are developing a production application, we recommend using TypeScript an
 
 npx json-server --watch db.json --port 3001
 =>> run để chạy lấy dữ liệu
+
+tích hợp lệnh trên trong file package.json rồi 
+=>> chỉ cần chạy npm run dev là có thể chạy cả file dữ liệu 

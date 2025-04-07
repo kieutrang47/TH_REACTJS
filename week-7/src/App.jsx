@@ -12,7 +12,7 @@ function App() {
         <Header />
         <OverviewCards />
         <DataTable />
-        <Pagination />
+        {/* <Pagination /> */}
       </div>
     </div>
   );
