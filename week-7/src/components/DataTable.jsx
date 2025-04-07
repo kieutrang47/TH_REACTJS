@@ -158,26 +158,30 @@ const DataTable = () => {
       {/* Modal */}
       {editUser && (
         <div className="fixed inset-0 bg-black/30 flex justify-center items-center z-50">
-          <div className="bg-white p-6 rounded-xl w-[400px] space-y-4 shadow-lg">
-            <h3 className="text-lg font-semibold">Edit Customer</h3>
-            <div className="space-y-2">
+          <div className="bg-[#fff4ec] p-6 rounded-2xl w-[400px] shadow-2xl border border-orange-200">
+            <h3 className="text-xl font-semibold text-orange-500 mb-4">
+              ✏️ Edit Customer
+            </h3>
+            <div className="space-y-3">
               <input
-                className="w-full border p-2 rounded"
+                className="w-full border rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
                 value={editUser.name}
                 onChange={(e) =>
                   setEditUser({ ...editUser, name: e.target.value })
                 }
+                placeholder="Customer Name"
               />
               <input
-                className="w-full border p-2 rounded"
+                className="w-full border rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
                 value={editUser.company}
                 onChange={(e) =>
                   setEditUser({ ...editUser, company: e.target.value })
                 }
+                placeholder="Company"
               />
               <input
                 type="number"
-                className="w-full border p-2 rounded"
+                className="w-full border rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
                 value={editUser.orderValue}
                 onChange={(e) =>
                   setEditUser({
@@ -185,9 +189,10 @@ const DataTable = () => {
                     orderValue: Number(e.target.value),
                   })
                 }
+                placeholder="Order Value"
               />
               <select
-                className="w-full border p-2 rounded"
+                className="w-full border rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
                 value={editUser.status}
                 onChange={(e) =>
                   setEditUser({ ...editUser, status: e.target.value })
@@ -198,15 +203,15 @@ const DataTable = () => {
                 <option>Completed</option>
               </select>
             </div>
-            <div className="flex justify-end gap-2 pt-2">
+            <div className="flex justify-end gap-2 pt-4">
               <button
-                className="px-4 py-1 border rounded text-gray-600"
+                className="px-4 py-2 border border-orange-300 text-orange-500 rounded-xl hover:bg-orange-50 transition"
                 onClick={() => setEditUser(null)}
               >
                 Cancel
               </button>
               <button
-                className="px-4 py-1 bg-pink-500 text-white rounded"
+                className="px-4 py-2 bg-orange-400 text-white rounded-xl hover:bg-orange-500 transition"
                 onClick={handleSave}
               >
                 Save
