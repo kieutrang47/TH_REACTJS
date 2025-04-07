@@ -10,10 +10,11 @@
   gap: 10px;  /* Điều chỉnh gap giữa các phần tử */
   padding: 20px;  /* Padding tổng thể */
 }
-
+/* chỉnh cho layout không bị chồng lên nhau */
 html, body, #root {
   height: 100%;
 }
+
 
 .container > div {
   background-color: rgba(255, 255, 255, 0.8);

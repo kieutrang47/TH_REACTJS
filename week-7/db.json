@@ -28,10 +28,10 @@
       "id": "2",
       "name": "Mason Smith",
       "company": "AvatarSystems",
-      "orderValue": 938,
+      "orderValue": 939,
       "orderDate": "2023-08-20",
       "status": "In-progress",
-      "avatar": "/img/Avatar (6).png"
+      "avatar": "/img/Avatar (3).png"
     },
     {
       "id": "3",
@@ -58,7 +58,7 @@
       "orderValue": 316,
       "orderDate": "2023-07-02",
       "status": "Completed",
-      "avatar": "/img/Avatar (6).png"
+      "avatar": "/img/Avatar (4).png"
     },
     {
       "id": "6",
@@ -67,7 +67,7 @@
       "orderValue": 408,
       "orderDate": "2023-10-02",
       "status": "In-progress",
-      "avatar": "/img/Avatar (9).png"
+      "avatar": "/img/Avatar (2).png"
     },
     {
       "id": "7",
@@ -76,7 +76,7 @@
       "orderValue": 938,
       "orderDate": "2023-09-20",
       "status": "Completed",
-      "avatar": "/img/Avatar (7).png"
+      "avatar": "/img/Avatar (1).png"
     },
     {
       "id": "8",
@@ -85,7 +85,7 @@
       "orderValue": 583,
       "orderDate": "2023-07-31",
       "status": "New",
-      "avatar": "/img/Avatar (7).png"
+      "avatar": "/img/Avatar.png"
     },
     {
       "id": "9",
@@ -121,7 +121,7 @@
       "orderValue": 587,
       "orderDate": "2023-02-20",
       "status": "In-progress",
-      "avatar": "/img/Avatar (6).png"
+      "avatar": "/img/Avatar 313.png"
     },
     {
       "id": "13",
@@ -139,7 +139,7 @@
       "orderValue": 713,
       "orderDate": "2023-10-24",
       "status": "In-progress",
-      "avatar": "/img/Avatar (9).png"
+      "avatar": "/img/Avatar (1).png"
     },
     {
       "id": "15",
@@ -148,7 +148,7 @@
       "orderValue": 140,
       "orderDate": "2023-09-24",
       "status": "New",
-      "avatar": "/img/Avatar (7).png"
+      "avatar": "/img/Avatar (5).png"
     },
     {
       "id": "16",
@@ -157,7 +157,7 @@
       "orderValue": 923,
       "orderDate": "2023-04-29",
       "status": "New",
-      "avatar": "/img/Avatar (2).png"
+      "avatar": "/img/Avatar (4).png"
     },
     {
       "id": "17",
@@ -184,7 +184,7 @@
       "orderValue": 524,
       "orderDate": "2023-06-20",
       "status": "In-progress",
-      "avatar": "/img/Avatar (6).png"
+      "avatar": "/img/Avatar.png"
     },
     {
       "id": "20",
@@ -193,7 +193,7 @@
       "orderValue": 724,
       "orderDate": "2023-04-11",
       "status": "New",
-      "avatar": "/img/Avatar (7).png"
+      "avatar": "/img/Avatar 313.png"
     },
     {
       "id": "21",
@@ -202,7 +202,7 @@
       "orderValue": 730,
       "orderDate": "2023-01-07",
       "status": "New",
-      "avatar": "/img/Avatar (9).png"
+      "avatar": "/img/Avatar (1).png"
     },
     {
       "id": "22",
@@ -211,7 +211,7 @@
       "orderValue": 491,
       "orderDate": "2023-07-31",
       "status": "New",
-      "avatar": "/img/Avatar (10).png"
+      "avatar": "/img/Avatar (1).png"
     },
     {
       "id": "23",
@@ -238,7 +238,7 @@
       "orderValue": 561,
       "orderDate": "2023-04-28",
       "status": "In-progress",
-      "avatar": "/img/Avatar (9).png"
+      "avatar": "/img/Avatar (5).png"
     },
     {
       "id": "26",
@@ -247,7 +247,7 @@
       "orderValue": 553,
       "orderDate": "2023-04-22",
       "status": "Completed",
-      "avatar": "/img/Avatar (10).png"
+      "avatar": "/img/Avatar (5).png"
     },
     {
       "id": "27",
@@ -256,7 +256,7 @@
       "orderValue": 451,
       "orderDate": "2023-09-11",
       "status": "In-progress",
-      "avatar": "/img/Avatar (6).png"
+      "avatar": "/img/Avatar (3).png"
     },
     {
       "id": "28",
@@ -274,7 +274,7 @@
       "orderValue": 928,
       "orderDate": "2023-10-27",
       "status": "New",
-      "avatar": "/img/Avatar (7).png"
+      "avatar": "/img/Avatar (1).png"
     },
     {
       "id": "30",
@@ -283,7 +283,7 @@
       "orderValue": 820,
       "orderDate": "2023-07-29",
       "status": "New",
-      "avatar": "/img/Avatar (9).png"
+      "avatar": "/img/Avatar (2).png"
     },
     {
       "id": "31",
@@ -292,7 +292,7 @@
       "orderValue": 870,
       "orderDate": "2023-05-04",
       "status": "In-progress",
-      "avatar": "/img/Avatar (9).png"
+      "avatar": "/img/Avatar (3).png"
     },
     {
       "id": "32",
@@ -310,7 +310,7 @@
       "orderValue": 449,
       "orderDate": "2023-01-05",
       "status": "Completed",
-      "avatar": "/img/Avatar (8).png"
+      "avatar": "/img/Avatar (4).png"
     },
     {
       "id": "34",
@@ -373,7 +373,7 @@
       "orderValue": 485,
       "orderDate": "2023-11-17",
       "status": "In-progress",
-      "avatar": "/img/Avatar (6).png"
+      "avatar": "/img/Avatar (2).png"
     },
     {
       "id": "41",
@@ -391,7 +391,7 @@
       "orderValue": 343,
       "orderDate": "2023-06-18",
       "status": "In-progress",
-      "avatar": "/img/Avatar (10).png"
+      "avatar": "/img/Avatar 313.png"
     },
     {
       "id": "43",
@@ -400,7 +400,7 @@
       "orderValue": 859,
       "orderDate": "2023-03-13",
       "status": "Completed",
-      "avatar": "/img/Avatar (8).png"
+      "avatar": "/img/Avatar (4).png"
     },
     {
       "id": "44",
@@ -427,7 +427,7 @@
       "orderValue": 628,
       "orderDate": "2023-07-05",
       "status": "In-progress",
-      "avatar": "/img/Avatar (9).png"
+      "avatar": "/img/Avatar (1).png"
     },
     {
       "id": "47",
@@ -436,7 +436,7 @@
       "orderValue": 301,
       "orderDate": "2023-01-10",
       "status": "Completed",
-      "avatar": "/img/Avatar (7).png"
+      "avatar": "/img/Avatar.png"
     },
     {
       "id": "48",
@@ -472,7 +472,7 @@
       "orderValue": 515,
       "orderDate": "2023-12-07",
       "status": "Completed",
-      "avatar": "/img/Avatar (7).png"
+      "avatar": "/img/Avatar.png"
     },
     {
       "id": "52",
@@ -481,7 +481,7 @@
       "orderValue": 362,
       "orderDate": "2023-02-17",
       "status": "Completed",
-      "avatar": "/img/Avatar (6).png"
+      "avatar": "/img/Avatar (2).png"
     },
     {
       "id": "53",
@@ -499,7 +499,7 @@
       "orderValue": 707,
       "orderDate": "2023-03-14",
       "status": "Completed",
-      "avatar": "/img/Avatar (10).png"
+      "avatar": "/img/Avatar 313.png"
     },
     {
       "id": "55",
@@ -526,7 +526,7 @@
       "orderValue": 322,
       "orderDate": "2023-06-11",
       "status": "New",
-      "avatar": "/img/Avatar (10).png"
+      "avatar": "/img/Avatar 313.png"
     },
     {
       "id": "58",
@@ -535,7 +535,7 @@
       "orderValue": 930,
       "orderDate": "2023-02-27",
       "status": "Completed",
-      "avatar": "/img/Avatar (8).png"
+      "avatar": "/img/Avatar (4).png"
     },
     {
       "id": "59",
@@ -544,7 +544,7 @@
       "orderValue": 896,
       "orderDate": "2023-04-02",
       "status": "New",
-      "avatar": "/img/Avatar (7).png"
+      "avatar": "/img/Avatar.png"
     },
     {
       "id": "60",
@@ -553,7 +553,7 @@
       "orderValue": 351,
       "orderDate": "2023-09-28",
       "status": "New",
-      "avatar": "/img/Avatar (10).png"
+      "avatar": "/img/Avatar 313.png"
     },
     {
       "id": "61",
@@ -562,7 +562,7 @@
       "orderValue": 533,
       "orderDate": "2023-10-09",
       "status": "In-progress",
-      "avatar": "/img/Avatar (7).png"
+      "avatar": "/img/Avatar.png"
     },
     {
       "id": "62",
@@ -580,7 +580,16 @@
       "orderValue": 359,
       "orderDate": "2023-09-28",
       "status": "Completed",
-      "avatar": "/img/Avatar (10).png"
+      "avatar": "/img/Avatar 313.png"
+    },
+    {
+      "id": "01e5",
+      "name": "Trang Nguyễn",
+      "company": "IUH ",
+      "orderValue": "811",
+      "orderDate": "2025-04-07",
+      "status": "New",
+      "avatar": "/img/Avatar 313.png"
     }
   ]
 }
