@@ -1,5 +1,6 @@
 import { Pencil } from "lucide-react";
 import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 
 const statusStyles = {
   New: "bg-blue-100 text-blue-500",
@@ -36,6 +37,39 @@ const DataTable = ({ customers, setCustomers, onAddClick }) => {
       }
     } catch (error) {
       console.error("Update failed", error);
+    }
+  };
+
+  const handleDelete = async (id) => {
+    try {
+      const res = await fetch(`http://localhost:3001/customers/${id}`, {
+        method: "DELETE",
+      });
+
+      if (res.ok) {
+        // Gọi hàm callback từ props để cập nhật lại danh sách ở Dashboard
+        setCustomers((prev) => prev.filter((cus) => cus.id !== id));
+      } else {
+        console.error("Delete failed");
+      }
+    } catch (error) {
+      console.error("Error deleting:", error);
+    }
+  };
+
+  const confirmDelete = async (id) => {
+    const result = await Swal.fire({
+      title: "Are you sure?",
+      text: "This customer will be permanently deleted.",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#e11d48", // pink-600
+      cancelButtonColor: "#aaa",
+      confirmButtonText: "Yes, delete it!",
+    });
+
+    if (result.isConfirmed) {
+      handleDelete(id);
     }
   };
 
@@ -127,6 +161,15 @@ const DataTable = ({ customers, setCustomers, onAddClick }) => {
                     className="text-gray-400 hover:text-gray-600 cursor-pointer"
                     onClick={() => setEditUser(customer)}
                   />
+                </td>
+                <td className="p-3 ">
+                  <button
+                    onClick={() => confirmDelete(customer.id)}
+                    title="Delete"
+                    className="text-red-500 hover:text-red-700"
+                  >
+                    🗑️
+                  </button>
                 </td>
               </tr>
             ))}

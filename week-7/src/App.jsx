@@ -2,24 +2,23 @@
 import { Outlet } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
+import { Toaster } from "react-hot-toast";
 
 export default function App() {
   return (
     <div className="flex h-screen overflow-hidden">
-      
       <Sidebar />
 
-      
       <div className="flex-1 flex flex-col overflow-hidden">
-       
         <Header />
 
         {/* Nội dung chính => pages */}
         <main className="flex-1 overflow-y-auto bg-gray-50 p-6">
-         
           <Outlet />
         </main>
       </div>
+      {/* Toaster hiển thị thông báo toàn app */}
+      <Toaster position="top-right" />
     </div>
   );
 }
