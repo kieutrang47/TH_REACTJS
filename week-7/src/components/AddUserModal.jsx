@@ -33,10 +33,10 @@ export default function AddUserModal({ onClose, onAdd }) {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 pointer-events-none">
-      {/* Không có lớp nền đen luôn, chỉ modal */}
-      <div className="bg-[#fff4ec] p-6 rounded-2xl w-full max-w-md shadow-2xl border border-orange-200 animate-fadeIn pointer-events-auto">
-        <h2 className="text-xl font-bold mb-4 text-orange-500">
-          ➕ Add New Customer
+      {/* Modal không có lớp nền đen */}
+      <div className="bg-[#fff0f5] p-6 rounded-2xl w-full max-w-md shadow-2xl border border-pink-200 animate-fadeIn pointer-events-auto">
+        <h2 className="text-xl font-bold mb-4 text-pink-500">
+          💖 Add New Customer
         </h2>
         <form onSubmit={handleSubmit} className="space-y-3">
           <input
@@ -45,7 +45,7 @@ export default function AddUserModal({ onClose, onAdd }) {
             placeholder="Customer Name"
             value={formData.name}
             onChange={handleChange}
-            className="w-full border rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
+            className="w-full border rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-pink-300"
             required
           />
           <input
@@ -54,7 +54,7 @@ export default function AddUserModal({ onClose, onAdd }) {
             placeholder="Company"
             value={formData.company}
             onChange={handleChange}
-            className="w-full border rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
+            className="w-full border rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-pink-300"
             required
           />
           <input
@@ -63,7 +63,7 @@ export default function AddUserModal({ onClose, onAdd }) {
             placeholder="Order Value"
             value={formData.orderValue}
             onChange={handleChange}
-            className="w-full border rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
+            className="w-full border rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-pink-300"
             required
           />
           <input
@@ -71,14 +71,14 @@ export default function AddUserModal({ onClose, onAdd }) {
             name="orderDate"
             value={formData.orderDate}
             onChange={handleChange}
-            className="w-full border rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
+            className="w-full border rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-pink-300"
             required
           />
           <select
             name="status"
             value={formData.status}
             onChange={handleChange}
-            className="w-full border rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
+            className="w-full border rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-pink-300"
           >
             <option>New</option>
             <option>In-progress</option>
@@ -90,19 +90,19 @@ export default function AddUserModal({ onClose, onAdd }) {
             placeholder="Avatar URL"
             value={formData.avatar}
             onChange={handleChange}
-            className="w-full border rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
+            className="w-full border rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-pink-300"
           />
           <div className="flex justify-end gap-2">
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 border border-orange-300 text-orange-500 rounded-xl hover:bg-orange-50 transition"
+              className="px-4 py-2 border border-pink-300 text-pink-500 rounded-xl hover:bg-pink-50 transition"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="px-4 py-2 bg-orange-400 text-white rounded-xl hover:bg-orange-500 transition"
+              className="px-4 py-2 bg-pink-400 text-white rounded-xl hover:bg-pink-500 transition"
             >
               Add
             </button>
