@@ -76,11 +76,21 @@ const DataTable = () => {
           Detailed report
         </h2>
         <div className="flex gap-2">
-          <button className="border border-pink-500 text-pink-500 px-3 py-1 rounded-lg text-sm hover:bg-pink-50">
-            📥 Import
+          <button className="flex items-center gap-2 border border-pink-500 text-pink-500 px-4 py-1.5 rounded-lg text-sm hover:bg-pink-50">
+            <img
+              src="src/assets/Lab_05/Download.png"
+              alt="icon"
+              className="w-4 h-4"
+            />
+            Import
           </button>
-          <button className="border border-pink-500 text-pink-500 px-3 py-1 rounded-lg text-sm hover:bg-pink-50">
-            📤 Export
+          <button className="flex items-center gap-2 border border-pink-500 text-pink-500 px-4 py-1.5 rounded-lg text-sm hover:bg-pink-50">
+            <img
+              src="src/assets/Lab_05/Move up.png"
+              alt="icon"
+              className="w-4 h-4"
+            />
+            Export
           </button>
         </div>
       </div>

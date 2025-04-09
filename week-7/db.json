@@ -19,7 +19,7 @@
       "id": "1",
       "name": "William Johnson",
       "company": "FlowRush",
-      "orderValue": 574,
+      "orderValue": 579,
       "orderDate": "2023-04-11",
       "status": "Completed",
       "avatar": "/img/Avatar (2).png"
@@ -28,7 +28,7 @@
       "id": "2",
       "name": "Mason Smith",
       "company": "AvatarSystems",
-      "orderValue": 939,
+      "orderValue": 100,
       "orderDate": "2023-08-20",
       "status": "In-progress",
       "avatar": "/img/Avatar (3).png"
