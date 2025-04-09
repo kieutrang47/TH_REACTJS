@@ -7,34 +7,16 @@ const statusStyles = {
   Completed: "bg-green-100 text-green-500",
 };
 
-const DataTable = () => {
-  const [customers, setCustomers] = useState([]);
+const DataTable = ({ customers, setCustomers, onAddClick }) => {
+  const [editUser, setEditUser] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const rowsPerPage = 6;
-  // thêm hooks để edit dữ liệu
-  const [editUser, setEditUser] = useState(null);
 
-  // useEffect(() => {
-  //   fetch("http://localhost:3001/customers")
-  //     .then((res) => res.json())
-  //     .then((data) => setCustomers(data))
-  //     .catch((err) => console.error("Failed to fetch customers:", err));
-  // }, []);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    setLoading(true);
-    fetch("http://localhost:3001/customers")
-      .then((res) => res.json())
-      .then((data) => {
-        setCustomers(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Failed to fetch customers:", err);
-        setLoading(false);
-      });
-  }, []);
+  const totalPages = Math.ceil(customers.length / rowsPerPage);
+  const currentData = customers.slice(
+    (currentPage - 1) * rowsPerPage,
+    currentPage * rowsPerPage
+  );
 
   const handleSave = async () => {
     try {
@@ -47,25 +29,19 @@ const DataTable = () => {
         }
       );
       if (response.ok) {
-        // Cập nhật lại local state sau khi PUT thành công
         setCustomers((prev) =>
           prev.map((cus) => (cus.id === editUser.id ? editUser : cus))
         );
-        setEditUser(null); //đóng modal
+        setEditUser(null);
       }
     } catch (error) {
       console.error("Update failed", error);
     }
   };
-  // ... hiển thị phân trang. dùng .slice() để cắt đúng phần
-  const totalPages = Math.ceil(customers.length / rowsPerPage);
-  const currentData = customers.slice(
-    (currentPage - 1) * rowsPerPage,
-    currentPage * rowsPerPage
-  );
 
   return (
     <div className="bg-white rounded-xl p-4 mt-6 shadow-sm">
+      {/* Header */}
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-lg font-semibold flex items-center gap-2">
           <img
@@ -92,10 +68,16 @@ const DataTable = () => {
             />
             Export
           </button>
+          <button
+            onClick={onAddClick}
+            className="flex items-center gap-2 bg-pink-500 text-white px-4 py-1.5 rounded-lg text-sm hover:bg-pink-600"
+          >
+            ➕ Add customer
+          </button>
         </div>
       </div>
 
-      {/* Hiển thị bảng dữ liệu khách hàng */}
+      {/* Table */}
       <div className="overflow-x-auto rounded-xl border">
         <table className="min-w-full text-sm">
           <thead className="bg-gray-50 text-gray-600 uppercase text-xs">
@@ -152,6 +134,7 @@ const DataTable = () => {
         </table>
       </div>
 
+      {/* Pagination */}
       <div className="flex justify-between items-center mt-4 text-sm text-gray-600">
         <span>{customers.length} results</span>
         <div className="flex items-center gap-2">
@@ -187,7 +170,7 @@ const DataTable = () => {
         </div>
       </div>
 
-      {/* Modal */}
+      {/* Edit Modal */}
       {editUser && (
         <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex justify-center items-center z-50 transition-all">
           <div className="bg-white p-8 rounded-3xl w-[440px] shadow-2xl border border-pink-200 relative animate-fadeIn">
@@ -197,7 +180,7 @@ const DataTable = () => {
                 alt="icon"
                 className="w-6 h-6"
               />
-              Edit Customer
+              Edit customer
             </h3>
 
             <div className="space-y-5 text-sm">

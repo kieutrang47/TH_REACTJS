@@ -21,15 +21,11 @@ export default function Dashboard() {
   return (
     <div className="space-y-6">
       <OverviewCards />
-      <div className="flex justify-end">
-        <button
-          onClick={() => setShowAddModal(true)}
-          className="px-4 py-2 bg-pink-500 text-white rounded hover:bg-pink-600"
-        >
-          ➕ Add Customer
-        </button>
-      </div>
-      <DataTable customers={customers} setCustomers={setCustomers} />
+      <DataTable
+        customers={customers}
+        setCustomers={setCustomers}
+        onAddClick={() => setShowAddModal(true)} // Truyền hàm mở modal xuống
+      />
       {showAddModal && (
         <AddUserModal
           onClose={() => setShowAddModal(false)}
