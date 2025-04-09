@@ -590,6 +590,15 @@
       "orderDate": "2025-04-07",
       "status": "New",
       "avatar": "/img/Avatar 313.png"
+    },
+    {
+      "id": "e90f",
+      "name": "kimkim",
+      "company": "IUH ",
+      "orderValue": "1000",
+      "orderDate": "2025-04-10",
+      "status": "In-progress",
+      "avatar": "/img/Avatar 313.png"
     }
   ]
 }
