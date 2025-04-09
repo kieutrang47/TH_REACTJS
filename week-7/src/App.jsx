@@ -1,22 +1,22 @@
 //cau 5
 import { Outlet } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
-import Header from "./components/Header"; // nếu có Header
+import Header from "./components/Header";
 
 export default function App() {
   return (
     <div className="flex h-screen overflow-hidden">
-      {/* Sidebar cố định */}
+      
       <Sidebar />
 
-      {/* Main content scrollable */}
+      
       <div className="flex-1 flex flex-col overflow-hidden">
-        {/* Nếu có Header */}
+       
         <Header />
 
         {/* Nội dung chính => pages */}
         <main className="flex-1 overflow-y-auto bg-gray-50 p-6">
-          {/* hiện nội dung trang con */}
+         
           <Outlet />
         </main>
       </div>
