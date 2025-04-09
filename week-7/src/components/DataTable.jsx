@@ -14,11 +14,26 @@ const DataTable = () => {
   // thêm hooks để edit dữ liệu
   const [editUser, setEditUser] = useState(null);
 
+  // useEffect(() => {
+  //   fetch("http://localhost:3001/customers")
+  //     .then((res) => res.json())
+  //     .then((data) => setCustomers(data))
+  //     .catch((err) => console.error("Failed to fetch customers:", err));
+  // }, []);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
+    setLoading(true);
     fetch("http://localhost:3001/customers")
       .then((res) => res.json())
-      .then((data) => setCustomers(data))
-      .catch((err) => console.error("Failed to fetch customers:", err));
+      .then((data) => {
+        setCustomers(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Failed to fetch customers:", err);
+        setLoading(false);
+      });
   }, []);
 
   const handleSave = async () => {
@@ -32,16 +47,17 @@ const DataTable = () => {
         }
       );
       if (response.ok) {
+        // Cập nhật lại local state sau khi PUT thành công
         setCustomers((prev) =>
           prev.map((cus) => (cus.id === editUser.id ? editUser : cus))
         );
-        setEditUser(null);
+        setEditUser(null); //đóng modal
       }
     } catch (error) {
       console.error("Update failed", error);
     }
   };
-
+  // ... hiển thị phân trang. dùng .slice() để cắt đúng phần
   const totalPages = Math.ceil(customers.length / rowsPerPage);
   const currentData = customers.slice(
     (currentPage - 1) * rowsPerPage,
@@ -52,7 +68,12 @@ const DataTable = () => {
     <div className="bg-white rounded-xl p-4 mt-6 shadow-sm">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-lg font-semibold flex items-center gap-2">
-          📊 Detailed report
+          <img
+            src="src/assets/Lab_05/File text 1.png"
+            alt="icon"
+            className="w-5 h-5"
+          />
+          Detailed report
         </h2>
         <div className="flex gap-2">
           <button className="border border-pink-500 text-pink-500 px-3 py-1 rounded-lg text-sm hover:bg-pink-50">
@@ -64,6 +85,7 @@ const DataTable = () => {
         </div>
       </div>
 
+      {/* Hiển thị bảng dữ liệu khách hàng */}
       <div className="overflow-x-auto rounded-xl border">
         <table className="min-w-full text-sm">
           <thead className="bg-gray-50 text-gray-600 uppercase text-xs">
@@ -157,64 +179,81 @@ const DataTable = () => {
 
       {/* Modal */}
       {editUser && (
-        <div className="fixed inset-0 bg-black/30 flex justify-center items-center z-50">
-          <div className="bg-[#fff4ec] p-6 rounded-2xl w-[400px] shadow-2xl border border-orange-200">
-            <h3 className="text-xl font-semibold text-orange-500 mb-4">
+        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex justify-center items-center z-50">
+          <div className="bg-white p-8 rounded-2xl w-[420px] shadow-xl border border-orange-100 relative">
+            <h3 className="text-2xl font-bold text-orange-500 mb-6 flex items-center gap-2">
               ✏️ Edit Customer
             </h3>
-            <div className="space-y-3">
-              <input
-                className="w-full border rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
-                value={editUser.name}
-                onChange={(e) =>
-                  setEditUser({ ...editUser, name: e.target.value })
-                }
-                placeholder="Customer Name"
-              />
-              <input
-                className="w-full border rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
-                value={editUser.company}
-                onChange={(e) =>
-                  setEditUser({ ...editUser, company: e.target.value })
-                }
-                placeholder="Company"
-              />
-              <input
-                type="number"
-                className="w-full border rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
-                value={editUser.orderValue}
-                onChange={(e) =>
-                  setEditUser({
-                    ...editUser,
-                    orderValue: Number(e.target.value),
-                  })
-                }
-                placeholder="Order Value"
-              />
-              <select
-                className="w-full border rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
-                value={editUser.status}
-                onChange={(e) =>
-                  setEditUser({ ...editUser, status: e.target.value })
-                }
-              >
-                <option>New</option>
-                <option>In-progress</option>
-                <option>Completed</option>
-              </select>
+
+            <div className="space-y-4">
+              <label className="block">
+                <span className="text-sm text-gray-600">Customer Name</span>
+                <input
+                  className="w-full mt-1 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
+                  value={editUser.name}
+                  onChange={(e) =>
+                    setEditUser({ ...editUser, name: e.target.value })
+                  }
+                  placeholder="e.g. John Doe"
+                />
+              </label>
+
+              <label className="block">
+                <span className="text-sm text-gray-600">Company</span>
+                <input
+                  className="w-full mt-1 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
+                  value={editUser.company}
+                  onChange={(e) =>
+                    setEditUser({ ...editUser, company: e.target.value })
+                  }
+                  placeholder="e.g. Acme Inc."
+                />
+              </label>
+
+              <label className="block">
+                <span className="text-sm text-gray-600">Order Value</span>
+                <input
+                  type="number"
+                  className="w-full mt-1 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
+                  value={editUser.orderValue}
+                  onChange={(e) =>
+                    setEditUser({
+                      ...editUser,
+                      orderValue: Number(e.target.value),
+                    })
+                  }
+                  placeholder="e.g. 1500"
+                />
+              </label>
+
+              <label className="block">
+                <span className="text-sm text-gray-600">Status</span>
+                <select
+                  className="w-full mt-1 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
+                  value={editUser.status}
+                  onChange={(e) =>
+                    setEditUser({ ...editUser, status: e.target.value })
+                  }
+                >
+                  <option>New</option>
+                  <option>In-progress</option>
+                  <option>Completed</option>
+                </select>
+              </label>
             </div>
-            <div className="flex justify-end gap-2 pt-4">
+
+            <div className="flex justify-end gap-3 pt-6">
               <button
-                className="px-4 py-2 border border-orange-300 text-orange-500 rounded-xl hover:bg-orange-50 transition"
+                className="px-4 py-2 text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50 transition"
                 onClick={() => setEditUser(null)}
               >
                 Cancel
               </button>
               <button
-                className="px-4 py-2 bg-orange-400 text-white rounded-xl hover:bg-orange-500 transition"
+                className="px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition"
                 onClick={handleSave}
               >
-                Save
+                Save Changes
               </button>
             </div>
           </div>

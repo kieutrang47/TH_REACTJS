@@ -20,7 +20,7 @@ export default function useOverviewData() {
         const turnover = await turnoverRes.json();
         const profit = await profitRes.json();
         const newCustomer = await newCustomerRes.json();
-
+// Mỗi Response cần gọi .json() để lấy dữ liệu thật dưới dạng object.
         setOverview({
           turnover,
           profit,
