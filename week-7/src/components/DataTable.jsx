@@ -189,17 +189,22 @@ const DataTable = () => {
 
       {/* Modal */}
       {editUser && (
-        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex justify-center items-center z-50">
-          <div className="bg-white p-8 rounded-2xl w-[420px] shadow-xl border border-orange-100 relative">
-            <h3 className="text-2xl font-bold text-orange-500 mb-6 flex items-center gap-2">
-              ✏️ Edit Customer
+        <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex justify-center items-center z-50 transition-all">
+          <div className="bg-white p-8 rounded-3xl w-[440px] shadow-2xl border border-pink-200 relative animate-fadeIn">
+            <h3 className="text-2xl font-bold text-pink-500 mb-6 flex items-center gap-3">
+              <img
+                src="src/assets/Lab_05/create.png"
+                alt="icon"
+                className="w-6 h-6"
+              />
+              Edit Customer
             </h3>
 
-            <div className="space-y-4">
+            <div className="space-y-5 text-sm">
               <label className="block">
-                <span className="text-sm text-gray-600">Customer Name</span>
+                <span className="text-gray-500 font-medium">Customer Name</span>
                 <input
-                  className="w-full mt-1 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
+                  className="w-full mt-2 border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-pink-400 transition"
                   value={editUser.name}
                   onChange={(e) =>
                     setEditUser({ ...editUser, name: e.target.value })
@@ -209,9 +214,9 @@ const DataTable = () => {
               </label>
 
               <label className="block">
-                <span className="text-sm text-gray-600">Company</span>
+                <span className="text-gray-500 font-medium">Company</span>
                 <input
-                  className="w-full mt-1 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
+                  className="w-full mt-2 border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-pink-400 transition"
                   value={editUser.company}
                   onChange={(e) =>
                     setEditUser({ ...editUser, company: e.target.value })
@@ -221,10 +226,10 @@ const DataTable = () => {
               </label>
 
               <label className="block">
-                <span className="text-sm text-gray-600">Order Value</span>
+                <span className="text-gray-500 font-medium">Order Value</span>
                 <input
                   type="number"
-                  className="w-full mt-1 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
+                  className="w-full mt-2 border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-pink-400 transition"
                   value={editUser.orderValue}
                   onChange={(e) =>
                     setEditUser({
@@ -237,9 +242,9 @@ const DataTable = () => {
               </label>
 
               <label className="block">
-                <span className="text-sm text-gray-600">Status</span>
+                <span className="text-gray-500 font-medium">Status</span>
                 <select
-                  className="w-full mt-1 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
+                  className="w-full mt-2 border border-gray-300 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-pink-400 transition"
                   value={editUser.status}
                   onChange={(e) =>
                     setEditUser({ ...editUser, status: e.target.value })
@@ -252,18 +257,18 @@ const DataTable = () => {
               </label>
             </div>
 
-            <div className="flex justify-end gap-3 pt-6">
+            <div className="flex justify-end gap-4 pt-8">
               <button
-                className="px-4 py-2 text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50 transition"
+                className="px-5 py-2 text-pink-500 border border-pink-300 rounded-full hover:bg-pink-50 transition font-semibold"
                 onClick={() => setEditUser(null)}
               >
                 Cancel
               </button>
               <button
-                className="px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition"
+                className="px-5 py-2 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition font-semibold shadow-md"
                 onClick={handleSave}
               >
-                Save Changes
+                Save
               </button>
             </div>
           </div>
@@ -402,3 +407,5 @@ export default DataTable;
 //     </div>
 //   );
 // }
+
+// ✏️
