@@ -21,6 +21,7 @@ const App = () => {
   const [productPrice, setProductPrice] = useState('');
   const [productCategory, setProductCategory] = useState('');
   const [productStock, setProductStock] = useState('');
+  const [searchQuery, setSearchQuery] = useState(''); // Tìm kiếm theo tên
 
   // Xử lý thêm sản phẩm
   const handleAddProduct = () => {
@@ -47,6 +48,11 @@ const App = () => {
     // Gửi action để xoá sản phẩm
     dispatch({ type: 'DELETE_PRODUCT', payload: id });
   };
+
+  // Lọc danh sách sản phẩm theo tên (không phân biệt hoa thường)
+  const filteredProducts = products.filter(product =>
+    product.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <div className="container mt-5">
@@ -93,10 +99,21 @@ const App = () => {
         Thêm sản phẩm
       </button>
 
+      {/* Ô input tìm kiếm */}
+      <div className="mt-4 mb-3">
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Tìm kiếm sản phẩm theo tên"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)} // Cập nhật tìm kiếm
+        />
+      </div>
+
       {/* Danh sách sản phẩm */}
       <h3 className="mt-5">Danh sách sản phẩm</h3>
       <ul className="list-group">
-        {products.map((product) => (
+        {filteredProducts.map((product) => (
           <li key={product.id} className="list-group-item">
             <strong>{product.name}</strong><br />
             Giá: {product.price} VNĐ | Danh mục: {product.category} | Tồn kho: {product.stock}
