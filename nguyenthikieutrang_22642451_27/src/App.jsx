@@ -1,132 +1,73 @@
-import React, { useReducer, useState } from 'react';
+import React, { useState, useReducer } from 'react';
+import './App.css'; // Import file CSS
 
-// Reducer để quản lý danh sách sản phẩm
-const productReducer = (state, action) => {
+// Dữ liệu mẫu sản phẩm
+const initialProducts = [
+  { id: 1, name: 'Áo thun nam', price: 200000, category: 'Thời trang', stock: 50 },
+  { id: 2, name: 'Laptop Dell XPS 13', price: 25000000, category: 'Công nghệ', stock: 30 },
+  { id: 3, name: 'Bàn phím cơ Logitech', price: 1200000, category: 'Công nghệ', stock: 15 },
+  { id: 4, name: 'Nồi cơm điện Panasonic', price: 1500000, category: 'Gia dụng', stock: 40 },
+  { id: 5, name: 'Áo sơ mi nữ', price: 300000, category: 'Thời trang', stock: 20 },
+  { id: 6, name: 'Smartphone iPhone 13', price: 20000000, category: 'Công nghệ', stock: 25 },
+  { id: 7, name: 'Máy xay sinh tố', price: 800000, category: 'Gia dụng', stock: 10 }
+];
+
+// Reducer để quản lý state
+function productReducer(state, action) {
   switch (action.type) {
-    case 'ADD_PRODUCT':
-      return [...state, action.payload];
-    case 'DELETE_PRODUCT':
-      return state.filter(product => product.id !== action.payload); // Xoá sản phẩm theo id
+    case 'SET_CATEGORY_FILTER':
+      return { ...state, categoryFilter: action.category };
     default:
       return state;
   }
-};
+}
 
 const App = () => {
-  // Dùng useReducer để quản lý sản phẩm
-  const [products, dispatch] = useReducer(productReducer, []);
+  const [state, dispatch] = useReducer(productReducer, { products: initialProducts, categoryFilter: '' });
+  const { products, categoryFilter } = state;
 
-  // Dữ liệu input
-  const [productName, setProductName] = useState('');
-  const [productPrice, setProductPrice] = useState('');
-  const [productCategory, setProductCategory] = useState('');
-  const [productStock, setProductStock] = useState('');
-  const [searchQuery, setSearchQuery] = useState(''); // Tìm kiếm theo tên
+  // Lọc sản phẩm theo danh mục
+  const filteredProducts = categoryFilter
+    ? products.filter(product => product.category === categoryFilter)
+    : products;
 
-  // Xử lý thêm sản phẩm
-  const handleAddProduct = () => {
-    const newProduct = {
-      id: Date.now(), // tạo id duy nhất
-      name: productName,
-      price: productPrice,
-      category: productCategory,
-      stock: productStock,
-    };
-
-    // Gửi action để thêm sản phẩm
-    dispatch({ type: 'ADD_PRODUCT', payload: newProduct });
-
-    // Clear form sau khi thêm
-    setProductName('');
-    setProductPrice('');
-    setProductCategory('');
-    setProductStock('');
+  // Handler khi chọn danh mục
+  const handleCategoryChange = (event) => {
+    dispatch({ type: 'SET_CATEGORY_FILTER', category: event.target.value });
   };
-
-  // Xử lý xoá sản phẩm
-  const handleDeleteProduct = (id) => {
-    // Gửi action để xoá sản phẩm
-    dispatch({ type: 'DELETE_PRODUCT', payload: id });
-  };
-
-  // Lọc danh sách sản phẩm theo tên (không phân biệt hoa thường)
-  const filteredProducts = products.filter(product =>
-    product.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
 
   return (
-    <div className="container mt-5">
-      <h2>Quản lý sản phẩm</h2>
+    <div className="container">
+      <h1>Quản lý sản phẩm</h1>
 
-      {/* Form để thêm sản phẩm */}
-      <div className="mb-3">
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Tên sản phẩm"
-          value={productName}
-          onChange={(e) => setProductName(e.target.value)}
-        />
-      </div>
-      <div className="mb-3">
-        <input
-          type="number"
-          className="form-control"
-          placeholder="Giá"
-          value={productPrice}
-          onChange={(e) => setProductPrice(e.target.value)}
-        />
-      </div>
-      <div className="mb-3">
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Danh mục"
-          value={productCategory}
-          onChange={(e) => setProductCategory(e.target.value)}
-        />
-      </div>
-      <div className="mb-3">
-        <input
-          type="number"
-          className="form-control"
-          placeholder="Tồn kho"
-          value={productStock}
-          onChange={(e) => setProductStock(e.target.value)}
-        />
-      </div>
-      <button className="btn btn-primary" onClick={handleAddProduct}>
-        Thêm sản phẩm
-      </button>
-
-      {/* Ô input tìm kiếm */}
-      <div className="mt-4 mb-3">
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Tìm kiếm sản phẩm theo tên"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)} // Cập nhật tìm kiếm
-        />
+      {/* Dropdown chọn danh mục */}
+      <div>
+        <label>Lọc theo danh mục: </label>
+        <select onChange={handleCategoryChange}>
+          <option value="">Tất cả</option>
+          <option value="Thời trang">Thời trang</option>
+          <option value="Công nghệ">Công nghệ</option>
+          <option value="Gia dụng">Gia dụng</option>
+        </select>
       </div>
 
-      {/* Danh sách sản phẩm */}
-      <h3 className="mt-5">Danh sách sản phẩm</h3>
-      <ul className="list-group">
-        {filteredProducts.map((product) => (
-          <li key={product.id} className="list-group-item">
-            <strong>{product.name}</strong><br />
-            Giá: {product.price} VNĐ | Danh mục: {product.category} | Tồn kho: {product.stock}
-            {/* Nút Xoá */}
-            <button
-              className="btn btn-danger btn-sm float-end"
-              onClick={() => handleDeleteProduct(product.id)}
-            >
-              Xoá
-            </button>
-          </li>
-        ))}
-      </ul>
+      {/* Hiển thị danh sách sản phẩm lọc được */}
+      <div>
+        <h2>Danh sách sản phẩm</h2>
+        <ul>
+          {filteredProducts.map((product) => (
+            <li key={product.id}>
+              <div>
+                <strong>{product.name}</strong><br />
+                Giá: {product.price} VNĐ<br />
+                Danh mục: {product.category}<br />
+                Tồn kho: {product.stock}
+              </div>
+              <button>XOÁ</button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
