@@ -1,26 +1,18 @@
+import React from 'react';
+import ProductItem from './components/ProductItem';
 
-import { useState } from 'react';
-
-const initialProducts = [
-  { id: 1, name: "Áo thun", price: 150000, category: "Thời trang", stock: 20 },
-  { id: 2, name: "Tai nghe", price: 350000, category: "Công nghệ", stock: 10 },
-  { id: 3, name: "Nồi cơm", price: 500000, category: "Gia dụng", stock: 22 },
+const sampleProducts = [
+  { id: 1, name: 'Áo thun', price: 150000, category: 'Thời trang', stock: 20 },
+  { id: 2, name: 'Tai nghe Bluetooth', price: 500000, category: 'Công nghệ', stock: 10 },
 ];
 
 function App() {
-  const [products] = useState(initialProducts);
-
   return (
-    <div>
-      <h1>Danh sách sản phẩm</h1>
-      <ul>
-        {products.map((p) => (
-          <li key={p.id}>
-            {p.name} - {p.price}đ - {p.category} - Tồn kho: {p.stock}
-            <button>Xoá</button>
-          </li>
-        ))}
-      </ul>
+    <div className="container mt-4">
+      <h1 className="mb-4">Danh sách sản phẩm</h1>
+      {sampleProducts.map((p) => (
+        <ProductItem key={p.id} product={p} onDelete={() => {}} />
+      ))}
     </div>
   );
 }
