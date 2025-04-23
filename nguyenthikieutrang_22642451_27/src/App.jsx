@@ -1,64 +1,150 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ProductItem from './components/ProductItem';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
-  const [products, setProducts] = useState([
-    { id: 1, name: 'Sản phẩm 1', price: 100000, category: 'Thời trang', stock: 10 },
-    { id: 2, name: 'Sản phẩm 2', price: 200000, category: 'Công nghệ', stock: 5 },
-  ]);
+  const [products, setProducts] = useState([]);
+  const [newProduct, setNewProduct] = useState({ name: '', price: '', category: '', stock: '' });
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('');
 
-  const handleDelete = (id) => {
-    setProducts(products.filter(product => product.id !== id));
+  // Load products from localStorage when the component mounts
+  useEffect(() => {
+    const savedProducts = JSON.parse(localStorage.getItem('products'));
+    if (savedProducts) {
+      setProducts(savedProducts);
+    }
+  }, []);
+
+  // Save products to localStorage whenever the products list changes
+  useEffect(() => {
+    if (products.length > 0) {
+      localStorage.setItem('products', JSON.stringify(products));
+    }
+  }, [products]);
+
+  // Handle input change for new product
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setNewProduct({ ...newProduct, [name]: value });
   };
+
+  // Handle adding a new product
+  const handleAddProduct = () => {
+    if (newProduct.name && newProduct.price && newProduct.category && newProduct.stock) {
+      const newProductData = {
+        id: Date.now(),
+        name: newProduct.name,
+        price: newProduct.price,
+        category: newProduct.category,
+        stock: newProduct.stock,
+      };
+      const updatedProducts = [...products, newProductData];
+      setProducts(updatedProducts);
+      setNewProduct({ name: '', price: '', category: '', stock: '' }); // Reset input fields
+    }
+  };
+
+  // Handle deleting a product
+  const handleDelete = (id) => {
+    const updatedProducts = products.filter(product => product.id !== id);
+    setProducts(updatedProducts);
+  };
+
+  // Handle search input
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value.toLowerCase());
+  };
+
+  // Filter products based on search and category
+  const filteredProducts = products.filter((product) =>
+    product.name.toLowerCase().includes(searchQuery)
+  );
+
+  const filteredByCategory = filteredProducts.filter((product) =>
+    selectedCategory ? product.category === selectedCategory : true
+  );
+
+  // Calculate total products and total stock
+  const totalProducts = filteredByCategory.length;
+  const totalStock = filteredByCategory.reduce((total, product) => total + parseInt(product.stock), 0);
 
   return (
     <div className="container py-5">
-      {/* Header */}
-      <div className="d-flex justify-content-between align-items-center mb-4">
-        <h1 className="display-4 text-primary">Quản lý sản phẩm</h1>
-        <button className="btn btn-success">Thêm sản phẩm</button>
-      </div>
+      <h1 className="display-4 text-primary">Quản lý sản phẩm</h1>
 
-      {/* Search bar */}
+      {/* Search input */}
+      <input
+        type="text"
+        className="form-control mb-4"
+        placeholder="Tìm kiếm sản phẩm..."
+        onChange={handleSearchChange}
+      />
+
+      {/* Category filter */}
+      <select className="form-control mb-4" onChange={(e) => setSelectedCategory(e.target.value)}>
+        <option value="">Chọn danh mục</option>
+        <option value="Thời trang">Thời trang</option>
+        <option value="Công nghệ">Công nghệ</option>
+        <option value="Gia dụng">Gia dụng</option>
+      </select>
+
+      {/* Add new product */}
       <div className="mb-4">
-        <input 
-          type="text" 
-          placeholder="Tìm kiếm sản phẩm..."
-          className="form-control form-control-lg w-50 mx-auto"
+        <input
+          type="text"
+          name="name"
+          placeholder="Tên sản phẩm"
+          className="form-control mb-2"
+          value={newProduct.name}
+          onChange={handleInputChange}
         />
+        <input
+          type="number"
+          name="price"
+          placeholder="Giá"
+          className="form-control mb-2"
+          value={newProduct.price}
+          onChange={handleInputChange}
+        />
+        <input
+          type="text"
+          name="category"
+          placeholder="Danh mục"
+          className="form-control mb-2"
+          value={newProduct.category}
+          onChange={handleInputChange}
+        />
+        <input
+          type="number"
+          name="stock"
+          placeholder="Tồn kho"
+          className="form-control mb-2"
+          value={newProduct.stock}
+          onChange={handleInputChange}
+        />
+        <button onClick={handleAddProduct} className="btn btn-success w-100">Thêm sản phẩm</button>
       </div>
 
-      {/* Product Table */}
-      <div className="table-responsive">
-        <table className="table table-striped table-bordered table-hover">
-          <thead className="thead-dark">
-            <tr>
-              <th>Tên sản phẩm</th>
-              <th>Giá</th>
-              <th>Danh mục</th>
-              <th>Tồn kho</th>
-              <th>Hành động</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((product) => (
-              <ProductItem
-                key={product.id}
-                product={product}
-                onDelete={handleDelete}
-              />
-            ))}
-          </tbody>
-        </table>
-      </div>
+      {/* Display total products and stock */}
+      <p>Tổng sản phẩm: {totalProducts} | Tổng tồn kho: {totalStock}</p>
 
-      {/* Footer with total products and stock */}
-      <div className="mt-4 text-center">
-        <p className="lead">
-          Tổng sản phẩm: {products.length} | Tổng tồn kho: {products.reduce((total, product) => total + product.stock, 0)}
-        </p>
-      </div>
+      {/* Products Table */}
+      <table className="table table-striped">
+        <thead>
+          <tr>
+            <th>Tên sản phẩm</th>
+            <th>Giá</th>
+            <th>Danh mục</th>
+            <th>Tồn kho</th>
+            <th>Hành động</th>
+          </tr>
+        </thead>
+        <tbody>
+          {filteredByCategory.map((product) => (
+            <ProductItem key={product.id} product={product} onDelete={handleDelete} />
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
