@@ -5,6 +5,8 @@ const productReducer = (state, action) => {
   switch (action.type) {
     case 'ADD_PRODUCT':
       return [...state, action.payload];
+    case 'DELETE_PRODUCT':
+      return state.filter(product => product.id !== action.payload); // Xoá sản phẩm theo id
     default:
       return state;
   }
@@ -40,9 +42,17 @@ const App = () => {
     setProductStock('');
   };
 
+  // Xử lý xoá sản phẩm
+  const handleDeleteProduct = (id) => {
+    // Gửi action để xoá sản phẩm
+    dispatch({ type: 'DELETE_PRODUCT', payload: id });
+  };
+
   return (
     <div className="container mt-5">
       <h2>Quản lý sản phẩm</h2>
+
+      {/* Form để thêm sản phẩm */}
       <div className="mb-3">
         <input
           type="text"
@@ -83,12 +93,20 @@ const App = () => {
         Thêm sản phẩm
       </button>
 
+      {/* Danh sách sản phẩm */}
       <h3 className="mt-5">Danh sách sản phẩm</h3>
       <ul className="list-group">
         {products.map((product) => (
           <li key={product.id} className="list-group-item">
             <strong>{product.name}</strong><br />
             Giá: {product.price} VNĐ | Danh mục: {product.category} | Tồn kho: {product.stock}
+            {/* Nút Xoá */}
+            <button
+              className="btn btn-danger btn-sm float-end"
+              onClick={() => handleDeleteProduct(product.id)}
+            >
+              Xoá
+            </button>
           </li>
         ))}
       </ul>
