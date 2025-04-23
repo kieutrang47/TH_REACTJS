@@ -1,17 +1,39 @@
 import React from 'react';
 
-const ProductItem = ({ product }) => (
-  <div className="card mb-3">
-    <div className="card-body d-flex justify-content-between align-items-center">
-      <div>
-        <h5 className="card-title">{product.name}</h5>
-        <p className="card-text mb-1">Giá: {product.price.toLocaleString()}đ</p>
-        <p className="card-text mb-1">Danh mục: {product.category}</p>
-        <p className="card-text">Tồn kho: {product.stock}</p>
-      </div>
-      <button className="btn btn-danger">Xoá</button>
-    </div>
-  </div>
-);
+const ProductList = () => {
+  const products = [
+    { name: 'Sản phẩm 1', price: 100000, category: 'Công nghệ', stock: 20 },
+    { name: 'Sản phẩm 2', price: 200000, category: 'Thời trang', stock: 15 },
+    // thêm sản phẩm mẫu ở đây
+  ];
 
-export default ProductItem;
+  return (
+    <div>
+      <h2>Danh sách sản phẩm</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Tên</th>
+            <th>Giá</th>
+            <th>Danh mục</th>
+            <th>Tồn kho</th>
+            <th>Hành động</th>
+          </tr>
+        </thead>
+        <tbody>
+          {products.map((product, index) => (
+            <tr key={index}>
+              <td>{product.name}</td>
+              <td>{product.price}</td>
+              <td>{product.category}</td>
+              <td>{product.stock}</td>
+              <td><button>XOÁ</button></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+export default ProductList;
