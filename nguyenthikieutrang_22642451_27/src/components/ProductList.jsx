@@ -1,15 +1,22 @@
 const ProductList = () => {
+    const [searchTerm, setSearchTerm] = useState('');
     const [products, setProducts] = useState([
       { name: 'Sản phẩm 1', price: 100000, category: 'Công nghệ', stock: 20 },
       { name: 'Sản phẩm 2', price: 200000, category: 'Thời trang', stock: 15 },
     ]);
   
-    const deleteProduct = (index) => {
-      setProducts(products.filter((_, i) => i !== index));
-    };
+    const filteredProducts = products.filter((product) =>
+      product.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
   
     return (
       <div>
+        <input
+          type="text"
+          placeholder="Tìm kiếm sản phẩm..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
         <h2>Danh sách sản phẩm</h2>
         <table>
           <thead>
@@ -22,7 +29,7 @@ const ProductList = () => {
             </tr>
           </thead>
           <tbody>
-            {products.map((product, index) => (
+            {filteredProducts.map((product, index) => (
               <tr key={index}>
                 <td>{product.name}</td>
                 <td>{product.price}</td>
